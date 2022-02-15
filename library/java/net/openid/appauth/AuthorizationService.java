@@ -694,7 +694,7 @@ public class AuthorizationService {
                 return;
             }
 
-            if (response.idToken != null && response.accessToken != null && response.accessToken != response.idToken) {
+            if (response.idToken != null && response.accessToken != null && !response.accessToken.equalsIgnoreCase(response.idToken)) {
                 IdToken idToken;
                 try {
                     idToken = IdToken.from(response.idToken);
